@@ -1,0 +1,17 @@
+{
+  "version": "1.0",
+  "repos" : [{
+    "name" : "controlrepo",
+    "url" : "https://github.com/juaningan/estacion4-poc.git",
+    "branches" : ["master"],
+    "hooks": [{
+      "type" : "github",
+      "port" : "5151",
+      "url" : "/gitpoke"
+    },
+    {
+      "type" : "polling",
+      "interval" : "1"
+    }]
+  }]
+}
