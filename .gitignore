@@ -1,0 +1,7 @@
+.vagrant/
+*.ISO
+*.iso
+*.vdi
+*.VDI
+*.zip
+*.log

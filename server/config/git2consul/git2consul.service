@@ -1,0 +1,15 @@
+[Unit]
+Description=git2consul
+After=syslog.target
+After=network.target
+
+[Service]
+Type=simple
+ExecStart=/usr/local/bin/git2consul --config-file /etc/git2consul.json --endpoint 192.168.50.2 --port 8500
+TimeoutStopSec=59
+StandardOutput=syslog
+StandardError=syslog
+SyslogIdentifier=git2consul
+
+[Install]
+WantedBy=multi-user.target

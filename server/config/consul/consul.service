@@ -1,0 +1,11 @@
+[Unit]
+Description=consul agent
+Requires=network-online.target
+After=network-online.target
+
+[Service]
+Restart=on-failure
+ExecStart=/usr/local/bin/consul agent -dev -ui -bind='{{ GetAllInterfaces | include "network" "192.168.50.0/24"  | sort "size,address" | attr "address" }}' -client='{{ GetAllInterfaces | include "network" "192.168.50.0/24"  | sort "size,address" | attr "address" }}'
+
+[Install]
+WantedBy=multi-user.target
