@@ -5,7 +5,7 @@ After=network-online.target
 
 [Service]
 Restart=on-failure
-ExecStart=/usr/local/bin/fsconsul -addr="127.0.0.1:8500" -once=true controlrepo/master/controlrepo /etc/puppetlabs/code/environments/master/
+ExecStart=/usr/local/bin/consul agent -dev -config-dir="/etc/consul.d"
 
 [Install]
 WantedBy=multi-user.target
