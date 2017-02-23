@@ -30,7 +30,7 @@ Puppet::Reports.register_report(:consul_kv) do
   end
 
   def put_value(consul, path, v)
-    req = Net::HTTP::Put.new(key_path(k))
+    req = Net::HTTP::Put.new(path)
     req.body = v
     res = consul.request(req)
     case res
