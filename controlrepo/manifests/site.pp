@@ -3,4 +3,4 @@ Exec {
   logoutput => 'on_failure',
 }
 
-hiera_include('role', [])
+include lookup('role')
