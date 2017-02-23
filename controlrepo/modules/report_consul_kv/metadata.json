@@ -1,0 +1,14 @@
+{
+  "name": "udzura-report_consul_kv",
+  "version": "0.2.0",
+  "author": "Uchio Kondo",
+  "summary": "Puppet reporter which save details to Consul KV",
+  "license": "Apache-2.0",
+  "source": "https://github.com/udzura/puppet-report_consul_kv",
+  "project_page": "https://github.com/udzura/puppet-report_consul_kv#readme",
+  "issues_url": "https://github.com/udzura/puppet-report_consul_kv/issues",
+  "dependencies": [
+  
+  ],
+  "data_provider": null
+}

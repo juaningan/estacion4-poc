@@ -1,0 +1,13 @@
+{
+  "Gemfile": "6a08ec57f18e97c4ead40a6529d05aa8",
+  "Gemfile.lock": "c36f17165c91c023a578f3c47dd77afd",
+  "README.md": "0667c229ea44fe93874b6d20921af60a",
+  "Rakefile": "3044cde52b8cd8508c8400076a66ef11",
+  "lib/puppet/reports/consul_kv.rb": "f111d1e43603d88e73f09d3d7048e9cf",
+  "lib/puppet/reports/consul_kv.rb~": "e62ca2a38b7569af0b9d83c631b29b33",
+  "manifests/init.pp": "a3bcf1de316aae3e669d9546a7931207",
+  "metadata.json": "bcc9c7254af959e792cae27c550d636c",
+  "spec/classes/init_spec.rb": "a826e40740613ad4e15af64a953f01ae",
+  "spec/spec_helper.rb": "0db89c9a486df193c0e40095422e19dc",
+  "tests/init.pp": "648ced1063472c40a0c5ddcb69729d35"
+}
