@@ -1,0 +1,14 @@
+{
+  "watches": [
+    {
+      "type": "event",
+      "name": "puppet-apply",
+      "handler": "sifter run -e '/usr/local/bin/puppet.sh'"
+    },
+    {
+      "type": "event",
+      "name": "puppet-noop",
+      "handler": "sifter run -e '/usr/local/bin/puppet-noop.sh'"
+    }
+  ]
+}

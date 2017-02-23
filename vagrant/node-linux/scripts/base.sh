@@ -27,18 +27,24 @@ chown root:root /usr/local/bin/consul
 mkdir -p /etc/consul.d
 chmod 0755 /etc/consul.d
 cp -v ${CONFIG_DIR}/consul/default.json /etc/consul.d/.
+cp -v ${CONFIG_DIR}/consul/watches.json /etc/consul.d/.
 cp -v ${CONFIG_DIR}/consul/consul.service /etc/systemd/system/.
 systemctl daemon-reload
 systemctl enable consul.service
-systemctl start consul.service
 
 # Install fsconsul
 wget -q "https://bintray.com/cimpress-mcp/Go/download_file?file_path=v0.6.4%2Flinux-amd64%2Ffsconsul" -O /usr/local/bin/fsconsul
 chmod 0755 /usr/local/bin/fsconsul
 chown root:root /usr/local/bin/fsconsul
 
-# Install envconsul
-ENVCONSUL_VERSION='0.6.2'
-wget -q "https://releases.hashicorp.com/envconsul/${ENVCONSUL_VERSION}/envconsul_${ENVCONSUL_VERSION}_linux_amd64.tgz" -O - | tar -C /usr/local/bin/ -xvzf - envconsul
+# Install sifter
+SIFTER_VERSION='0.7'
+wget -q "https://github.com/darron/sifter/releases/download/v${SIFTER_VERSION}/sifter-${SIFTER_VERSION}-linux-amd64.gz" -O - | gunzip -c > /usr/local/bin/sifter
+chmod 0755 /usr/local/bin/sifter
+chown root:root /usr/local/bin/sifter
 
-#https://github.com/darron/sifter/releases/download/v0.7/sifter-0.7-linux-amd64.zip
+# Install custom scripts
+cp -v ${CONFIG_DIR}/scripts/* /usr/local/bin/.
+chmod +x /usr/local/bin/*.sh
+
+systemctl start consul.service
