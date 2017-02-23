@@ -5,7 +5,7 @@ After=network-online.target
 
 [Service]
 Restart=on-failure
-ExecStart=/usr/local/bin/fsconsul -addr="192.168.50.2:8500"  controlrepo/development /run/controlrepo "/usr/bin/puppet apply /run/controlrepo/site.pp"
+ExecStart=/usr/local/bin/fsconsul -addr="192.168.50.2:8500" -once=true controlrepo/master/controlrepo /etc/puppetlabs/code/environments/master/
 
 [Install]
 WantedBy=multi-user.target
