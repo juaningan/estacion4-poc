@@ -1,5 +1,6 @@
 class profile::base {
-  file { '/tmp/hola':
-    content => 'mundo',
+  package { 'bash' :
+    ensure => '4.3-14ubuntu1',
+    #ensure => '4.3-11ubuntu1',
   }
 }
