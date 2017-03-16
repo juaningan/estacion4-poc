@@ -7,13 +7,16 @@ set -u
 export DEBIAN_FRONTEND=noninteractive
 
 # Install puppet agent
-wget https://apt.puppetlabs.com/puppetlabs-release-pc1-yakkety.deb
-dpkg -i puppetlabs-release-pc1-yakkety.deb
-apt-get update
-apt-get install -y puppet-agent
+#wget https://apt.puppetlabs.com/puppetlabs-release-pc1-yakkety.deb
+#dpkg -i puppetlabs-release-pc1-yakkety.deb
+#apt-get update
+#apt-get install -y puppet-agent
+
+rpm -Uvh https://yum.puppetlabs.com/puppetlabs-release-pc1-el-7.noarch.rpm
+yum -y install puppet-agent
 
 # Install deps
-apt-get install -y unzip
+yum -y install unzip
 
 # Install Consul
 CONSUL_VERSION='0.7.5'
