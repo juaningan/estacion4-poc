@@ -9,8 +9,10 @@ choco install -y puppet-agent
 
 # Install consul
 $default = '{ "start_join": ["192.168.50.2"], "bind_addr": "{{ GetAllInterfaces | include \"network\" \"192.168.50.0/24\"  | sort \"size,address\" | attr \"address\" }}" }'
+$watches = '{ "watches": [ { "type": "event", "name": "puppet-apply", "handler": "/usr/local/bin/puppet.sh" } ] }'
 New-Item -ItemType Directory -Force -Path $env:ProgramData\consul\config
 $default | Set-Content $env:ProgramData\consul\config\default.json
+$watches | Set-Content $env:ProgramData\consul\config\watches.json
 choco install -y consul
 
 # Install fsconsul
