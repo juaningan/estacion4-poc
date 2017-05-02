@@ -58,25 +58,6 @@ Puppet::Reports.register_report(:consul_kv) do
   end
 
   def build_report
-    report = {
-      "host" => self.host,
-      "kind" => self.kind,
-      "status" => self.status,
-      "environment" => self.environment,
-      "puppet_version" => self.puppet_version,
-      "configuration_version" => self.configuration_version,
-      "start_time" => (self.logs.first.time.utc.iso8601 rescue ""),
-      "end_time" => (self.logs.last.time.utc.iso8601 rescue ""),
-      "master_certname" => Puppet.settings[:certname],
-      "report" => self,
-    }
-    if rev = @config[:revision_file]
-      if File.exist?(rev)
-        report.merge!("revision" => File.read(rev).chomp)
-      else
-        Puppet.warn("No REVISION file %s, skipping." % rev)
-      end
-    end
-    report
+    self
   end
 end
