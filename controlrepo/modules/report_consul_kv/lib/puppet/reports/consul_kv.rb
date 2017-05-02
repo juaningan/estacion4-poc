@@ -68,6 +68,7 @@ Puppet::Reports.register_report(:consul_kv) do
       "start_time" => (self.logs.first.time.utc.iso8601 rescue ""),
       "end_time" => (self.logs.last.time.utc.iso8601 rescue ""),
       "master_certname" => Puppet.settings[:certname],
+      "report" => self,
     }
     if rev = @config[:revision_file]
       if File.exist?(rev)
@@ -76,7 +77,6 @@ Puppet::Reports.register_report(:consul_kv) do
         Puppet.warn("No REVISION file %s, skipping." % rev)
       end
     end
-
     report
   end
 end
