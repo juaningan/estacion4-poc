@@ -7,10 +7,11 @@ set -u
 export DEBIAN_FRONTEND=noninteractive
 
 # Install deps
+apt-get update
 apt-get install -y unzip
 
 # Install Consul
-CONSUL_VERSION='0.7.5'
+CONSUL_VERSION='0.8.1'
 wget -q "https://releases.hashicorp.com/consul/${CONSUL_VERSION}/consul_${CONSUL_VERSION}_linux_amd64.zip" -O consul.zip
 unzip -o consul.zip -d /usr/local/bin
 rm -f consul.zip
